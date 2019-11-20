@@ -1,2 +1,4 @@
 # new-linux-setup
-$ sh setup.sh
+```bash
+sh setup.sh
+```
