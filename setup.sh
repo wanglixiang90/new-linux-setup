@@ -7,7 +7,7 @@ sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh
 
 # Set up Vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cat vimrc-vundle-setup | cat - ~/.vimrc > /tmp/out && mv /tmp/out ~/.vimrc
+cat ./vimrc-vundle-setup | cat - ~/.vimrc > /tmp/out && mv /tmp/out ~/.vimrc
 
 # Trigger zsh first time user setup.
 zsh -v
