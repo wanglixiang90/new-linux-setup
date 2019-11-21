@@ -3,7 +3,7 @@
 sudo apt update
 sudo apt upgrade
 
-sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh
+sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh nvim tmux
 
 # Set up Vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
