@@ -43,6 +43,7 @@ let &t_EI .= "\<Esc>[?2004l"
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
+# Enable vim paste mode when pasting to avoid auto-indentation.
 function! XTermPasteBegin()
   set pastetoggle=<Esc>[201~
   set paste
