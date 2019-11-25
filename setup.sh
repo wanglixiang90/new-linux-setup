@@ -9,9 +9,9 @@ sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh nvim tmux
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cat ./vimrc-vundle-setup | cat - ~/.vimrc > /tmp/out && mv /tmp/out ~/.vimrc
 
+# zsh setup
 # Trigger zsh first time user setup.
 zsh -v
-
 # Set zsh as default terminal
 chsh -s /bin/zsh
 # Set aliases
@@ -19,6 +19,12 @@ echo "alias c='clear'" >> ~/.zshrc
 echo "alias lsa='ls -a'" >> ~/.zshrc
 # Check if powerline-fonts for agnoster are installed correctly
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
+
+# tmux setup
+# oh-my-tmux
+git clone https://github.com/gpakosz/.tmux.git ~/.tmux
+ln -s -f ~/.tmux/.tmux.conf -t ~
+cp ~/.tmux/.tmux.conf.local ~
 
 # Set up nodenv
 git clone https://github.com/nodenv/nodenv.git ~/.nodenv
