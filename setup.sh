@@ -8,6 +8,10 @@ sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh nvim tmux
 # Set up Neovim
 mkdir -p ~/.config/nvim
 mv ./nvimrc ~/.config/nvim/init.vim
+# dein plugin manager
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.cache/dein
+rm ./installer.sh
 
 # zsh setup
 # Trigger zsh first time user setup.
