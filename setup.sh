@@ -5,9 +5,9 @@ sudo apt upgrade
 
 sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh nvim tmux
 
-# Set up Vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cat ./vimrc-vundle-setup | cat - ~/.vimrc > /tmp/out && mv /tmp/out ~/.vimrc
+# Set up Neovim
+mkdir -p ~/.config/nvim
+mv ./nvimrc ~/.config/nvim/init.vim
 
 # zsh setup
 # Trigger zsh first time user setup.
