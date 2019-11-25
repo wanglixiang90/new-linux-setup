@@ -50,6 +50,7 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
+" dein plugin manager
 if &compatible
   set nocompatible
 endif
@@ -62,27 +63,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('Shougo/deoplete.nvim')
   if !has('nvim')
-    if &compatible
-  set nocompatible
-endif
-" Add the dein installation directory into runtimepath
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
-
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    
-  endif
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-filetype plugin indent on
-syntax enable
+    call dein#add('tpope/vim-fugitive')
+    call dein#add('')
   endif
 
   call dein#end()
