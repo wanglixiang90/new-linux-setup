@@ -25,6 +25,8 @@ echo "alias c='clear'" >> ~/.zshrc
 echo "alias lsa='ls -a'" >> ~/.zshrc
 # Check if powerline-fonts for agnoster are installed correctly
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
+# Get directory colors
+curl -o ~/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
 
 # tmux setup
 # oh-my-tmux
