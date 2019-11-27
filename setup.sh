@@ -3,7 +3,7 @@
 sudo apt update
 sudo apt upgrade
 
-sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh nvim tmux
+sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh nvim tmux rename
 
 # Set up Neovim
 mkdir -p ~/.config/nvim
