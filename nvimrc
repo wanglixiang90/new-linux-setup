@@ -46,6 +46,9 @@ endif
 filetype plugin indent on
 syntax enable
 
+if dein#check_install()
+  call dein#install()
+endif
 
 " air-line
 let g:airline_powerline_fonts = 1
