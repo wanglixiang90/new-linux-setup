@@ -30,9 +30,13 @@ if dein#load_state('~/.cache/dein')
 
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('Shougo/deoplete.nvim')
+  
+  " My plugins
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+
   if !has('nvim')
-    call dein#add('tpope/vim-fugitive')
-    call dein#add('')
   endif
 
   call dein#end()
