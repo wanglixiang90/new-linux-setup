@@ -26,7 +26,7 @@ cd ~ && curl -o ~/dircolors.256dark https://raw.githubusercontent.com/seebi/dirc
 echo "alias c='clear'" >> ~/.zshrc
 echo "alias lsa='ls -a'" >> ~/.zshrc
 echo "alias t='tmux'" >> ~/.zshrc
-echo "eval \`dircolors ~/dircolors.256dark\`"
+echo "eval \`dircolors ~/dircolors.256dark\`" >> ~/.zshrc
 # Check if powerline-fonts for agnoster are installed correctly
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
