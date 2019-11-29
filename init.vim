@@ -1,7 +1,8 @@
-# File moved to ~/.config/nvim/init.vim
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-source ~/.vimrc
+" File moved to ~/.config/nvim/init.vim
+" Uncomment if you have an existing .vimrc
+" set runtimepath^=~/.vim runtimepath+=~/.vim/after
+" let &packpath = &runtimepath
+" source ~/.vimrc
 
 " Enable vim paste mode when pasting to avoid auto-indentation.
 let &t_SI .= "\<Esc>[?2004h"
