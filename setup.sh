@@ -21,7 +21,7 @@ zsh -v
 # Set zsh as default terminal
 chsh -s /bin/zsh
 # Get directory colors
-curl -o ~/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
+cd ~ && curl -o ~/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark && cd -
 # Set aliases
 echo "alias c='clear'" >> ~/.zshrc
 echo "alias lsa='ls -a'" >> ~/.zshrc
