@@ -22,7 +22,8 @@ zsh -v
 chsh -s /bin/zsh
 # Get directory colors
 cd ~ && curl -o ~/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark && cd -
-# Set aliases
+# zsh config
+echo "PS2='> '" >> ~/.zshrc
 echo "alias c='clear'" >> ~/.zshrc
 echo "alias lsa='ls -a'" >> ~/.zshrc
 echo "alias t='tmux'" >> ~/.zshrc
