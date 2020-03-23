@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Common commands
+
+RED='\033[0;31m'
+LIGHT_BLUE='\033[1;34m'
+NC='\033[0m' # No Color
+ERROR="${RED}Incorrect inputs. Try again."
+
+AU_PROP=$H/mta-netstore/NS600/Config/mtaau/dev/etc/bap/NSNLS_EN.properties
+NZ_PROP=$H/mta-netstore/NS600/Config/mtanz/dev/etc/bap/NSNLS_EN.properties
+
+if [ -z "$*" ]; then
+	echo -e "$ERROR"
+fi
+
+if [[ $1 == u ]]; then
+	s uw $N/MTACurriculum.jsp && \
+	s uw $N/MTACurriculumEarlyYears.jsp && \
+	s uw $N/MTACurriculum-eylf.jsp && \
+	s uw $N/MTACurriculum-developmental.jsp && \
+	s uw $N/MTANZCurriculum-eylf.jsp && \
+	s uw $N/MTANZCurriculum-developmental.jsp && \
+	s uw $N/MTACurriculumSchoolResult.jsp && \
+	cp $AU_PROP /var/tmp/AU.properties && \
+	s uw /var/tmp/AU.properties && \
+	cp $NZ_PROP /var/tmp/NZ.properties && \
+	s uw /var/tmp/NZ.properties
+
+else
+	echo -e "$ERROR"
+fi

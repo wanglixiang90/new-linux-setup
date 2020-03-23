@@ -1,0 +1,71 @@
+#!/bin/bash
+RED='\033[0;31m'
+LIGHT_BLUE='\033[1;34m'
+NC='\033[0m' # No Color
+ERROR="${RED}Incorrect inputs. Try again."
+
+# Identity files
+W_I=~/.ssh/wfdev
+I_I=~/.ssh/mta_drop
+
+# Logins
+LOGIN_W=mta-services@10.2.1.130
+LOGIN_I=mta-services@10.2.1.139
+
+if [ -z "$*" ]; then
+	echo -e "$ERROR"
+	exit 1
+fi
+
+HELP_MSG="
+Commands:
+uw:       Upload file(s) to Wildfly using SCP.
+ui:       Upload file(s) to image dropserver using SCP.
+cw:       Set up SSH connection to Wildfly.
+ci:       Set up SSH connection to image dropserver.
+g [arg]:  Run /mta-resources/tools/minify-master  [arg]
+gaudev:   Run /mta-resources/tools/minify-master  mta-au-dev
+gnzdev:   Run /mta-resources/tools/minify-master  mta-nz-dev
+test:     Outputs first argument after command.
+"
+
+# Help
+if [[ $1 == -h ]]; then
+	echo "$HELP_MSG"
+
+# Test command
+elif [[ $1 == test ]]; then
+	echo $2
+
+# Upload to Wildfly dev
+elif [[ $1 == uw ]]; then
+	scp -i $W_I $2 $LOGIN_W:.
+
+# Upload to Image drop server
+elif [[ $1 == ui ]]; then
+	scp -i $I_I $2 $LOGIN_I:.
+
+# SSH to Wildfly dev
+elif [[ $1 == cw ]]; then
+	ssh -i $W_I $LOGIN_W
+
+# SSH to Image drop server
+elif [[ $1 == ci ]]; then
+	ssh -i $I_I $LOGIN_I
+
+# Build CSS/JS
+elif [[ $1 == g ]]; then
+	gulp --gulpfile $R/tools/minify-master/gulpfile.js $2
+elif [[ $1 == gaudev ]]; then
+	gulp --gulpfile $R/tools/minify-master/gulpfile.js mta-au-dev
+elif [[ $1 == gnzdev ]]; then
+	gulp --gulpfile $R/tools/minify-master/gulpfile.js mta-nz-dev
+
+# CSS Export
+elif [[ $1 == css ]]; then
+	node $R/tools/css-export/export.js $2
+
+else
+	echo -e $ERROR
+	exit 1
+fi
