@@ -41,6 +41,12 @@ elif [[ $1 == test ]]; then
 elif [[ $1 == uw ]]; then
 	scp -i $W_I $2 $LOGIN_W:.
 
+# Download from Wildfly dev
+# $2 - Filepath to download from server
+# $3 - Local filepath
+elif [[ $1 == dw ]]; then
+	scp -i $W_I $LOGIN_W:$2 $3
+
 # Upload to Image drop server
 elif [[ $1 == ui ]]; then
 	scp -i $I_I $2 $LOGIN_I:.
@@ -56,9 +62,9 @@ elif [[ $1 == ci ]]; then
 # Build CSS/JS
 elif [[ $1 == g ]]; then
 	gulp --gulpfile $R/tools/minify-master/gulpfile.js $2
-elif [[ $1 == gaudev ]]; then
+elif [[ $1 == au ]]; then
 	gulp --gulpfile $R/tools/minify-master/gulpfile.js mta-au-dev
-elif [[ $1 == gnzdev ]]; then
+elif [[ $1 == nz ]]; then
 	gulp --gulpfile $R/tools/minify-master/gulpfile.js mta-nz-dev
 
 # CSS Export
