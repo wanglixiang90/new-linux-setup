@@ -10,9 +10,15 @@ ERROR="${RED}Incorrect inputs. Try again."
 if [ -z "$*" ]; then
 	echo -e "$ERROR"
 	exit 1
-fi
 
-if [[ $1 == some ]]; then
+
+# Compress images at 70% quality
+elif [[ $1 == c && -z "$3" ]]; then
+	mogrify -quality 70 $2
+# Compress images at custom quality
+elif [[ $1 == c && ! -z "$3" ]]; then
+	mogrify -quality $2 $3
+
 
 else
 	echo -e "$ERROR"
