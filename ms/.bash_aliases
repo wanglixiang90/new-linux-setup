@@ -1,2 +1,5 @@
 alias c='clear'
 alias h='cd /mnt/c/Users/ajunnarkar/'
+alias lsa='ls -a'
+alias t='tmux'
+alias ..='cd ..'
