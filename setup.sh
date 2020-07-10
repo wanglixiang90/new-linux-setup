@@ -5,6 +5,10 @@ sudo apt upgrade
 
 sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh neovim tmux rename
 
+# Set up Git
+git config --global core.eol lf           # Git changes line-endings to Linux when needed
+git config --global core.autocrlf input   # Automatically convert line-endings to Linux on commit
+
 # Set up Neovim
 mkdir -p ~/.config/nvim
 mv ./init.vim ~/.config/nvim/init.vim
