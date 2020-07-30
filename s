@@ -18,7 +18,9 @@ elif [[ $1 == c && -z "$3" ]]; then
 # Compress images at custom quality
 elif [[ $1 == c && ! -z "$3" ]]; then
 	mogrify -quality $2 $3
-
+# Git stash and pull/push
+elif [[ $1 == rg ]]; then
+	git stash && git pull && git push && git stash pop
 
 else
 	echo -e "$ERROR"
