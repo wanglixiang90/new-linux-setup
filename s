@@ -41,3 +41,6 @@ else
 	echo -e "$ERROR"
 	exit 1
 fi
+
+# Replace underscores from filenames
+set -- *_*; for file; do mv -- "$file" "${file//_/-}"; done
