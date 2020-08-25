@@ -27,11 +27,11 @@ chsh -s /bin/zsh
 # Get directory colors
 cd ~ && curl -o ~/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark && cd -
 # zsh config
-echo "PS2='> '" >> ~/.zshrc
-echo "alias c='clear'" >> ~/.zshrc
-echo "alias lsa='ls -a'" >> ~/.zshrc
-echo "alias t='tmux'" >> ~/.zshrc
-echo "eval \`dircolors ~/dircolors.256dark\`" >> ~/.zshrc
+echo "PS2='> '"						| tee -a ~/.bashrc ~/.zshrc
+echo "alias c='clear'"		| tee -a ~/.bashrc ~/.zshrc
+echo "alias lsa='ls -a'"	| tee -a ~/.bashrc ~/.zshrc
+echo "alias t='tmux'"			| tee -a ~/.bashrc ~/.zshrc
+echo "eval \`dircolors ~/dircolors.256dark\`" | tee -a ~/.bashrc ~/.zshrc
 # Check if powerline-fonts for agnoster are installed correctly
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
@@ -49,8 +49,8 @@ git clone https://github.com/tmux-plugins/tmux-resurrect ~/.tmux/plugins/tmux-re
 # Set up nodenv
 git clone https://github.com/nodenv/nodenv.git ~/.nodenv
 cd ~/.nodenv && src/configure && make -C src
-echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(nodenv init -)"' >> ~/.zshrc
+echo 'export PATH="$HOME/.nodenv/bin:$PATH"' | tee -a ~/.bashrc ~/.zshrc
+echo 'eval "$(nodenv init -)"' | tee -a ~/.bashrc ~/.zshrc
 # Install nodenv-build - to be able to install node versions
 mkdir -p "$(nodenv root)"/plugins
 git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
