@@ -5,9 +5,11 @@ sudo apt upgrade
 
 sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh neovim tmux rename
 
+
 # Set up Git
 git config --global core.eol lf           # Git changes line-endings to Linux when needed
 git config --global core.autocrlf input   # Automatically convert line-endings to Linux on commit
+
 
 # Set up Neovim
 mkdir -p ~/.config/nvim
@@ -18,6 +20,7 @@ sh ./installer.sh ~/.cache/dein
 rm ./installer.sh
 # Install plugins
 nvim -c 'call dein#install()'
+
 
 # zsh setup
 # Trigger zsh first time user setup.
@@ -46,6 +49,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/tmux-plugins/tmux-sensible ~/.tmux/plugins/tmux-sensible
 git clone https://github.com/tmux-plugins/tmux-resurrect ~/.tmux/plugins/tmux-resurrect
 
+
 # Set up nodenv
 git clone https://github.com/nodenv/nodenv.git ~/.nodenv
 cd ~/.nodenv && src/configure && make -C src
@@ -57,8 +61,18 @@ git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node
 # Test if nodenv is set up correctly
 curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doctor | bash
 
+
+# Set up 
+mkdir ~/scripts
+mv ./s ./take ~/scripts/
+sudo chmod +x ~/scripts/*
+ln -s ~/scripts/s /bin
+ln -s ~/scripts/take /bin
+
+
 ## Do manually
 ## Set ZSH_THEME="agnoster"
+
 
 ## Add github SSH keys
 # ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
