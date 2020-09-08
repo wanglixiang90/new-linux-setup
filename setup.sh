@@ -64,7 +64,8 @@ curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doct
 
 # Set up 
 mkdir ~/scripts
-mv ./s ./take ~/scripts/
+# mv ./s ./take ~/scripts/
+mv ./s ~/scripts/
 sudo chmod +x ~/scripts/*
 ln -s ~/scripts/s /bin
 ln -s ~/scripts/take /bin
