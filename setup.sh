@@ -51,11 +51,16 @@ git clone https://github.com/tmux-plugins/tmux-resurrect ~/.tmux/plugins/tmux-re
 
 
 # Set up nodenv
-sudo rm -rf ~/.nodenv
+# Backup any existing copy first. Proceed only if it succeeds.
+sudo mv -i ~/.nodenv ~/.nodenv-backup && \
 git clone https://github.com/nodenv/nodenv.git ~/.nodenv
 cd ~/.nodenv && src/configure && make -C src
 echo 'export PATH="$HOME/.nodenv/bin:$PATH"' | tee -a ~/.bashrc ~/.zshrc
 echo 'eval "$(nodenv init -)"' | tee -a ~/.bashrc ~/.zshrc
+
+# Close and all open terminals to load nodenv
+# to proceed past this point.
+
 # Install nodenv-build - to be able to install node versions
 mkdir -p "$(nodenv root)"/plugins
 git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
