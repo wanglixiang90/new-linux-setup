@@ -51,6 +51,7 @@ git clone https://github.com/tmux-plugins/tmux-resurrect ~/.tmux/plugins/tmux-re
 
 
 # Set up nodenv
+sudo rm -rf ~/.nodenv
 git clone https://github.com/nodenv/nodenv.git ~/.nodenv
 cd ~/.nodenv && src/configure && make -C src
 echo 'export PATH="$HOME/.nodenv/bin:$PATH"' | tee -a ~/.bashrc ~/.zshrc
