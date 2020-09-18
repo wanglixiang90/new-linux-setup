@@ -3,7 +3,7 @@
 sudo apt update
 sudo apt upgrade
 
-sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh neovim tmux rename
+sudo apt install wget curl gcc git make xclip vim fonts-powerline zsh neovim tmux rename build-essential
 
 
 # Set up Git
