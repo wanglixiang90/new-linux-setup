@@ -14,6 +14,7 @@ HELP_MSG="
 c:			Compress images at 70% quality
 c -quality 50 file:	Compress images at custom quality
 g:			Git stash and pull/push - current directory
+re [file(s)]:           Rename file(s) to lowercase and replace spaces with hyphens
 "
 
 if [ -z "$*" ]; then
@@ -37,10 +38,11 @@ elif [[ $1 == c && ! -z "$3" ]]; then
 elif [[ $1 == g ]]; then
 	git stash && git pull && git push && git stash pop
 
+# Rename file(s) to lowercase and replace spaces with hyphens
+elif [[ $1 == re ]]; then
+	rename 'tr/ A-Z/-a-z/' -- $2 && rename 's/--+/-/g' -- $2
+
 else
 	echo -e "$ERROR"
 	exit 1
 fi
-
-# Replace underscores from filenames
-set -- *_*; for file; do mv -- "$file" "${file//_/-}"; done
