@@ -30,10 +30,14 @@ chsh -s /bin/zsh
 # Get directory colors
 cd ~ && curl -o ~/dircolors.256dark https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark && cd -
 # zsh config
-echo "PS2='> '"						| tee -a ~/.bashrc ~/.zshrc
-echo "alias c='clear'"		| tee -a ~/.bashrc ~/.zshrc
-echo "alias lsa='ls -a'"	| tee -a ~/.bashrc ~/.zshrc
-echo "alias t='tmux'"			| tee -a ~/.bashrc ~/.zshrc
+echo "PS2='> '"						            | tee -a ~/.bashrc ~/.zshrc
+echo "alias c='clear'"		            | tee -a ~/.bashrc ~/.zshrc
+echo "alias lsa='ls -a'"	            | tee -a ~/.bashrc ~/.zshrc
+echo "alias t='tmux'"			            | tee -a ~/.bashrc ~/.zshrc
+echo "alias ..='cd ..'                | tee -a ~/.bashrc ~/.zshrc
+echo "alias ...='cd ../..'            | tee -a ~/.bashrc ~/.zshrc
+echo "alias ....='cd ../../..'        | tee -a ~/.bashrc ~/.zshrc
+echo "alias .....='cd ../../../..'    | tee -a ~/.bashrc ~/.zshrc
 echo "eval \`dircolors ~/dircolors.256dark\`" | tee -a ~/.bashrc ~/.zshrc
 # Check if powerline-fonts for agnoster are installed correctly
 echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
