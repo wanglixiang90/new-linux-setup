@@ -15,7 +15,7 @@ git config --global core.autocrlf input   # Automatically convert line-endings t
 mkdir -p ~/.config/nvim
 mv ./init.vim ~/.config/nvim/init.vim
 # dein plugin manager
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer > installer.sh
 sh ./installer.sh ~/.cache/dein
 rm ./installer.sh
 # Install plugins
@@ -71,14 +71,16 @@ git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node
 # Test if nodenv is set up correctly
 curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doctor | bash
 
+git clone git@github.com:advaitju/linux-tools.git ~
+sh ~/linux-tools/setup.sh
 
 # Set up 
-mkdir ~/scripts
+## mkdir ~/scripts
 # mv ./s ./take ~/scripts/
-mv ./s ~/scripts/
-sudo chmod +x ~/scripts/*
-ln -s ~/scripts/s /bin
-ln -s ~/scripts/take /bin
+## mv ./s ~/scripts/
+## sudo chmod +x ~/scripts/*
+## ln -s ~/scripts/s /bin
+## ln -s ~/scripts/take /bin
 
 
 ## Do manually
